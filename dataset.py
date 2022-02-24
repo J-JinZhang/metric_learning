@@ -43,26 +43,13 @@ class Data4MetricLearn(Dataset):
     def __getitem__(self, time_idx):
         permut_idx = np.random.permutation(6)
         
-        anchor_idx = permut_idx[0]+1
-        pos_idx = permut_idx[1]+1
-        
-        time_stamp = self.im_clip[time_idx]
-        clip_name = "{}/clip_1".format(time_stamp)
-        anchor_file_name = "{}_{}.jpg".format(time_stamp, anchor_idx)
-        pos_file_name = "{}_{}.jpg".format(time_stamp, pos_idx)
-        
-        anchor_full_img_path = os.path.join(self.root, clip_name, anchor_file_name)
-        anchor_img = Image.open(anchor_full_img_path).convert("RGB")
-        
-        pos_full_img_path = os.path.join(self.root, clip_name, pos_file_name)
-        pos_img = Image.open(pos_full_img_path).convert("RGB")
         
         
-        neg_time_idx = random.randint(0, len(self.df)-1)
-        while neg_time_idx == time_idx:
-            neg_time_idx = random.randint(0, len(self.df)-1)
+        
+        
+        
             
-        time_stamp = self.im_clip[neg_time_idx]
+        
         clip_name = "{}/clip_1".format(time_stamp)
         neg_file_name = "{}_{}.jpg".format(time_stamp, random.randint(1,6))
         neg_full_img_path = os.path.join(self.root, clip_name, neg_file_name)
