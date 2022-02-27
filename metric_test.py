@@ -1,3 +1,9 @@
+"""
+Author: Dr. Jin Zhang 
+E-mail: j.zhang.vision@gmail.com
+Created on 2022.02.25
+"""
+
 import torch
 import torchvision
 from torch.utils.data import Dataset
@@ -14,26 +20,7 @@ from inception_net import Froth_Inception
 
 
 root = './data'
-"""imgs = ["1_20170903231055_EP_1_5.jpg",
-                    "1_20170903231055_PLUS_3_6.jpg",
-                    "2_20170830120026_EP_2_2.jpg",
-                    "2_20170830120026_EP_2_4.jpg",
-                    "3_20170830095017_EP_1_2.jpg",
-                    "3_20170830095017_EP_1_6.jpg",
-                    "3_20170831010642_EP_2_1.jpg",
-                    "3_20170831010642_EP_4_1.jpg",
-                    "4_20170830101351_EP_6_2.jpg",
-                    "4_20170830101351_PLUS_1_6.jpg",
-                    "5_20170830125551_EP_1_5.jpg",
-                    "5_20170830125551_EP_2_5.jpg"]"""
-imgs = ["1_20170903231055_EP_1_5.jpg",
-        "1_20170903231055_PLUS_3_6.jpg",
-        "2_20170830120026_EP_2_2.jpg",
-        "2_20170830120026_EP_2_4.jpg",
-        "3_20170830095017_EP_1_2.jpg",
-        "3_20170830095017_EP_1_6.jpg",
-        "4_20170830101351_EP_6_2.jpg",
-        "4_20170830101351_PLUS_1_6.jpg"]
+imgs = ["*.jpg"]
         
 normalize = torchvision.transforms.Normalize(mean=[0.5561, 0.5706, 0.5491],
                                                           std=[0.1833, 0.1916, 0.2061])
